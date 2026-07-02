@@ -6,12 +6,12 @@
 
 Validate product telemetry specs for event name, properties, and privacy review. It solves review drift by turning plain-text plans into deterministic CI-friendly findings.
 
-## Input Contract 33
+## Input Contract
 
 Accepts telemetry spec. The reader supports plain text, JSON, JSONL, and CSV so the
 tool can fit into scripts, CI jobs, and review exports.
 
-## CLI Walkthrough 33
+## CLI Walkthrough
 
 ```bash
 python -m pip install -e ".[dev]"
@@ -20,7 +20,7 @@ product-telemetry-check examples/sample.txt --json --fail-on medium
 python -m product_telemetry_check --help
 ```
 
-## Rule Surface 33
+## Rule Surface
 
 | Rule | Severity | Meaning |
 |---|---:|---|
@@ -28,7 +28,7 @@ python -m product_telemetry_check --help
 | `missing-properties` | medium | properties missing |
 | `privacy-unchecked` | low | privacy review missing |
 
-## Validation Notes 33
+## Validation Notes
 
 ```bash
 ruff check .
