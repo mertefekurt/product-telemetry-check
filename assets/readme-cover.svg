@@ -1,10 +1,31 @@
 <svg width="1280" height="420" viewBox="0 0 1280 420" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Product Telemetry Check cover">
-  <rect width="1280" height="420" rx="28" fill="#1f130f"/>
 
-  <rect x="0" y="0" width="448" height="420" fill="#b45309" opacity=".22"/>
-  <path d="M74 316C190 262 334 258 438 318S676 382 834 310s274-54 372-12" stroke="#f97316" stroke-width="16" stroke-linecap="round" opacity=".55"/>
-  <text x="92" y="166" fill="#fff7ed" font-family="Manrope, ui-sans-serif, system-ui" font-size="45" font-weight="850">Product Telemetry Check</text>
-  <text x="96" y="226" fill="#fed7aa" font-family="Manrope, ui-sans-serif, system-ui" font-size="24">Focused CLI for product analytics</text>
-  <rect x="96" y="268" width="360" height="48" rx="10" fill="#1f130f" opacity=".42"/>
-  <text x="116" y="299" fill="#fff7ed" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17">PRODUCT OPERATIONS</text>
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#fb923c" stop-opacity=".34"/>
+      <stop offset=".54" stop-color="#2a1711" stop-opacity="0"/>
+      <stop offset="1" stop-color="#f43f5e" stop-opacity=".30"/>
+    </linearGradient>
+    <filter id="grain" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" seed="90" result="noise"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="table" tableValues="0 .10"/></feComponentTransfer>
+      <feBlend mode="soft-light" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <rect width="1280" height="420" rx="30" fill="#2a1711"/>
+  <rect width="1280" height="420" rx="30" fill="url(#g)" filter="url(#grain)"/>
+
+  <circle cx="1044" cy="182" r="178" fill="#fb923c" opacity=".14"/>
+  <circle cx="1138" cy="286" r="92" fill="#f43f5e" opacity=".18"/>
+  <rect x="86" y="86" width="560" height="248" rx="26" fill="#2a1711" opacity=".68" stroke="#fb923c" stroke-width="4"/>
+  <text x="124" y="178" fill="#fff7ed" font-family="Manrope, ui-sans-serif, system-ui" font-size="48" font-weight="850">Product Telemetry Check</text>
+  <text x="128" y="234" fill="#fed7aa" font-family="Manrope, ui-sans-serif, system-ui" font-size="23">Validate product telemetry specs for event name,...</text>
+  <text x="128" y="292" fill="#f43f5e" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17" font-weight="800">OPERATIONS</text>
+  <rect x="846" y="122" width="168" height="28" rx="8" fill="#fb923c" opacity=".85"/>
+  <text x="862" y="141" fill="#fff7ed" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13">missing-event-name</text>
+  <rect x="846" y="176" width="232" height="28" rx="8" fill="#f43f5e" opacity=".85"/>
+  <text x="862" y="195" fill="#fff7ed" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13">missing-properties</text>
+  <rect x="846" y="230" width="270" height="28" rx="8" fill="#fb923c" opacity=".85"/>
+  <text x="862" y="249" fill="#fff7ed" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13">privacy-unchecked</text>
 </svg>

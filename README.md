@@ -1,37 +1,30 @@
 # Product Telemetry Check
 
-> A small command-line review pass for product analytics.
+Validate product telemetry specs for event name, properties, and privacy review.
 
 ![Product Telemetry Check cover](assets/readme-cover.svg)
 
-Validate product telemetry specs for event name, properties, and privacy review. This repo keeps the work close to the terminal: clear input, predictable output, and no service to babysit.
+## Signal route
 
-## Signals in plain English
+![Workflow diagram](assets/readme-diagram.svg)
 
-- `missing-event-name` (high): event name missing. Fix: define stable event name.
-- `missing-properties` (medium): properties missing. Fix: declare event properties.
-- `privacy-unchecked` (low): privacy review missing. Fix: review privacy impact.
+## Review intent
 
-## Input and report
+- Targets product analytics instead of broad linting.
+- Accepts plain text and returns terminal findings, optional json.
+- Keeps each rule visible so the project can be tuned without hunting through prose.
 
-The reader accepts text, JSON, JSONL, or CSV. The default report is readable in a terminal or pull request; `--json` keeps the same findings available to automation.
+## What gets flagged
 
-## Demo
+- `missing-event-name` - event name missing (high); define stable event name.
+- `missing-properties` - properties missing (medium); declare event properties.
+- `privacy-unchecked` - privacy review missing (low); review privacy impact.
+
+## Run the sample
 
 ```bash
 git clone https://github.com/mertefekurt/product-telemetry-check.git
 cd product-telemetry-check
-python -m venv .venv
-source .venv/bin/activate
 python -m pip install -e ".[dev]"
 product-telemetry-check examples/sample.txt
-product-telemetry-check examples/sample.txt --json
-```
-
-## Sanity checks
-
-```bash
-ruff check .
-pytest
-python -m product_telemetry_check --help
 ```
